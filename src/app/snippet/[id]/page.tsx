@@ -16,7 +16,7 @@ const snippetDetailPage = async({params}:{params: Promise<{ id: string }>}) => {
         return <div>Snippet not found</div>
     }
 
-const deleteSnippetAction=deleteSnippet.bind(null,snippet.id)
+const deleteSnippetAction=deleteSnippet.bind(null,snippet.id);
 
 
   return (
@@ -27,9 +27,9 @@ const deleteSnippetAction=deleteSnippet.bind(null,snippet.id)
                 {snippet.title}
              </div>
         <div>
-            
-            <Link href={`/snippet/${snippet.id}/edit`}><Button>Edit</Button></Link>
             <form action={deleteSnippetAction}>
+            <Link href={`/snippet/${snippet.id}/edit`}><Button>Edit</Button></Link>
+            
                 <Button variant='destructive' className='ml-2'>Delete</Button>
             </form>
             
