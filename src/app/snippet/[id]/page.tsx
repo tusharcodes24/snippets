@@ -38,6 +38,10 @@ const deleteSnippetAction=deleteSnippet.bind(null,snippet.id);
         <pre className='px-5 mt-9 bg-gray-200 p-6 rounded-md'>
             <code>{snippet.code}</code>
         </pre>
+
+        <Button className='mt-5'>
+            <Link href={'/'}>Back to Home</Link>
+        </Button>
         
     </div>
   )
