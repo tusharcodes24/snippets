@@ -1,6 +1,7 @@
 "use server"
 
 import { prisma } from "@/lib/prisma"
+import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
 //update
@@ -14,6 +15,7 @@ export const updateSnippet=async(id:number,code:string)=>{
         }
     })
 console.log("result-----------------",code);
+    revalidatePath(`/snippet/${id}`)
     redirect(`/snippet/${id}`);
     
 }
@@ -27,6 +29,7 @@ export const deleteSnippet=async(id:number)=>{
             id:id,
         }
     })
+    revalidatePath('/')
     redirect('/');
 }
 
@@ -56,5 +59,7 @@ export const deleteSnippet=async(id:number)=>{
     });
 
     console.log(snippet);
+
+    revalidatePath('/')
     redirect('/');
     }

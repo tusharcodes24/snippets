@@ -44,3 +44,13 @@ const deleteSnippetAction=deleteSnippet.bind(null,snippet.id);
 }
 
 export default snippetDetailPage
+
+
+export const generateStaticParams=async()=>{
+    const snippets=await prisma.snippet.findMany();
+    return snippets.map((snippet)=>{
+        return {
+            id:snippet.id.toString(),
+        }
+    })
+}

@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+// export const dynamic='force-dynamic';     //one way to make this page dynamic
+
+//export const revalidate=0; //another way to make this page dynamic, this will revalidate the page on every request
+//this is not recommended for production use, as it can lead to performance issues
+
+// on demand caching is a preffered way
 
 export default async function Home() {
 
