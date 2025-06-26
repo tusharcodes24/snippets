@@ -37,12 +37,12 @@ export const deleteSnippet=async(id:number)=>{
         const title = formData.get('title');
         const code = formData.get('code');
 
-        if(!title){
+        if(!title || typeof title!=='string'){//added typeof check to ensure title is a string
             return {
                 message: "Title is required",}
         }
 
-          if(!code){
+          if(!code || typeof code!=='string'){
             return {
                 message: "Code is required",}
         }

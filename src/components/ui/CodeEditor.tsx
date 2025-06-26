@@ -5,13 +5,13 @@ import type {Snippet} from '@/generated/prisma/client'
 import { Button } from './button'
 import { updateSnippet } from '@/actions';
 
-const CodeEditor = ({code}:Snippet) => {
-    const [val, setVal] = useState(code.code);
+const CodeEditor = ({snippet}:{snippet:Snippet}) => {
+    const [val, setVal] = useState(snippet.code);
 
     const handleChangeEvent=(value:string | undefined)=>{
-        setVal(value);
+        setVal(value ?? "");
     }
-    const updateSnippetAction=updateSnippet.bind(null,code.id , val)
+    const updateSnippetAction=updateSnippet.bind(null,snippet.id , val)
   return (
     <div className=' mx-5 py-6'>
 

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
-import { link } from "fs";
 import Link from "next/link";
 
 export default async function Home() {

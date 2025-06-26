@@ -8,7 +8,7 @@ import * as actions from '@/actions'
 
 import React, { useActionState } from 'react'
 
-const newSnippetPage = () => {
+const NewSnippetPage = () => {
     
     const [formStateData,createSnippet]=useActionState(actions.createSnippet,{message:""});
 
@@ -30,4 +30,4 @@ const newSnippetPage = () => {
   )
 }
 
-export default newSnippetPage;
+export default NewSnippetPage;

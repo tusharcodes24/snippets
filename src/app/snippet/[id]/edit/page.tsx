@@ -17,7 +17,7 @@ const editCodeSnippet = async({params}:{params:Promise<{id:string}>}) => {
     }
   return (
     <div className='bg-gray-300 h-screen w-screen'>
-        <CodeEditor code={snippet}></CodeEditor>
+        <CodeEditor snippet={snippet}></CodeEditor>
     </div>
   )
 }
